@@ -10,7 +10,7 @@ var generateBtn = document.querySelector("#generate");
 // }
 
 function generatePassword() {
-  var stringToReturn = ""
+  var finalPassword = ""
   var lengthAnswer = prompt(passLength); // this happens in an instant and is lost--never stored in variable
   if(lengthAnswer >= 8 && lengthAnswer <=128) {
     var lowerAnswer = confirm(lowerChar);
@@ -47,14 +47,11 @@ function generatePassword() {
   }
 
   for (i = 1; i <= lengthAnswer; i++) {
-    stringToReturn += charString.charAt(Math.floor(Math.random() * charString.length));
-    console.log(stringToReturn + "Inside while Loop");
+    finalPassword += charString.charAt(Math.floor(Math.random() * charString.length));
   }
-  console.log(stringToReturn + "Outside while loop");
-  console.log(charString)
 
   // return a string that fits the criteria based on the answers given.
-  return stringToReturn;
+  return finalPassword;
 
 }
 
